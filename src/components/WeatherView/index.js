@@ -12,7 +12,7 @@ const WeatherView = ({ input }) => {
   const [weatherData, setWeatherData] = useState(null);
   const API_KEY = process.env.REACT_APP_API_KEY;
   const formattedCity = input.charAt(0).toUpperCase() + input.slice(1); // Capitalize the first letter of the city name
-  const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${formattedCity}&aqi=no`;
+  const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${formattedCity}&aqi=no`;
 
   useEffect(() => {
     const fetchData = async () => {
