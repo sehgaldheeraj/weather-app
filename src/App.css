@@ -1,38 +1,72 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  margin: auto;
+  padding: 20px;
+  color: #211346;
+}
+.bg {
+  background: url("../src/assets/pexels-wild-dog-dingo92-1470589.png") no-repeat
+    center center fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.overlay {
+  position: absolute;
+  top: 12%;
+  bottom: 12%;
+  left: 12%;
+  right: 12%;
+  width: 75%;
+  height: 75%;
+  background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    to bottom,
+    rgba(30 80 133 / 58%) 0%,
+    rgba(139 40 80 / 70%) 100%
+  );
+  z-index: 1;
+  border-radius: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.overlay p {
   color: white;
+  position: relative;
+  z-index: 2;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 768px) {
+  .overlay {
+    top: 10%;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    height: 80%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 480px) {
+  .overlay {
+    position: absolute;
+    top: 12%;
+    bottom: 12%;
+    left: 9%;
+    right: 12%;
+    width: 72%;
+    height: 75%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .weather-view-container {
+    flex-grow: 1;
+    overflow: auto;
   }
 }
